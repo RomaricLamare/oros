@@ -1,0 +1,200 @@
+/* Styles communs à toutes les pages */
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem 10%;
+  position: relative;
+  background-color: var(--background-nav);
+  height: 203px;
+  width: 100vw;
+}
+
+/* Styles spécifiques à la page d'accueil */
+.homePageNav {
+  position: relative;
+  z-index: 1; /* S'assurer que la nav est au-dessus de l'image de fond */
+  padding: 1rem 10%;
+  height: 512px;
+}
+.logo {
+  cursor: pointer;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../../../public/background_image.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+/* on utilise la superposition pour gérer l'opacité de la photo */
+.backgroundImage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: -1;
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.input {
+  background-color: #f6f6f6;
+  width: 862px;
+}
+
+.icons {
+  color: #ffffff;
+}
+
+.title {
+  font-size: 2rem;
+  font-family: var(--police-poppins-bold);
+  color: #ffffff;
+  text-align: left;
+  margin: 20px 0;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+
+.categoryButtonsRow {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  position: absolute;
+  bottom: 20%;
+}
+
+/* Sur la page d'accueil, on organise les catégories en ligne distincte */
+.categoryButtonsRow ul {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  width: 70%;
+  list-style: none;
+}
+
+.categoryButton {
+  background-color: var(--background-nav);
+}
+
+.adminNav {
+  background-color: var(--background-nav);
+}
+
+.adminButton {
+  background-color: #eeeeee;
+  color: var(--background-nav);
+}
+
+.adminButtonsRow {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.buttonStocks {
+  position: absolute;
+  left: 21.04%;
+  right: 57.5%;
+  top: 39.41%;
+  bottom: 31.03%;
+
+  background: #454545;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  color: #ffffff;
+}
+
+.buttonReservations {
+  position: absolute;
+  left: 48.89%;
+  right: 29.65%;
+  top: 39.41%;
+  bottom: 31.03%;
+
+  background: #d9d9d9;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  color: #454545;
+}
+
+.adminToClientLink {
+  /* Retour espace client */
+
+  position: absolute;
+  left: 78.06%;
+  right: 9.72%;
+  top: 44.33%;
+  bottom: 35.96%;
+
+  font-family: var(--police-poppins-bold);
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  /* or 16px */
+  display: flex;
+  align-items: center;
+  text-decoration-line: underline;
+}
+
+@media (max-width: 1350px) {
+  .adminButton {
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .adminButton {
+    font-size: 10px;
+  }
+
+  .buttonStocks {
+    font-size: 10px;
+    width: 15vw;
+    height: 5vh;
+  }
+
+  .buttonReservations {
+    font-size: 10px;
+    width: 15vw;
+    height: 5vh;
+  }
+}
+
+@media (max-width: 550px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .categoryButtonsRow {
+    bottom: 10%;
+  }
+  .categoryButtonsRow ul {
+    flex-direction: column;
+  }
+
+  .adminButton {
+    font-size: 8px;
+  }
+}

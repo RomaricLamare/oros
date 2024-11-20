@@ -1,0 +1,61 @@
+services:
+  backend:
+    build: ../2311-wns-jaune-oros-back
+    ports:
+      - 4005:4000
+    volumes:
+      - "../2311-wns-jaune-oros-back/src:/app/src"
+    env_file:
+      - ../2311-wns-jaune-oros-back/db.env
+      - ../2311-wns-jaune-oros-back/.env
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - "curl -f http://backend:4000/graphql?query=%7B__typename%7D -H 'Apollo-Require-Preflight: true' || exit 1"
+      interval: 10s
+      timeout: 30s
+      retries: 5
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build: ./
+    ports:
+      - 3000:3000
+    volumes:
+      - "./src:/app/src"
+    depends_on:
+      backend:
+        condition: service_healthy
+    env_file:
+      - ./.env
+    develop:
+      watch:
+        - action: sync+restart
+          path: ./src
+          target: /app/src
+
+  db:
+    image: postgres:16
+    restart: always
+    env_file:
+      - ../2311-wns-jaune-oros-back/db.env
+    ports:
+      - 5437:5432
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d oros -U utilisateur"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - orosdatabase:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8087:8080
+
+volumes:
+  orosdatabase:

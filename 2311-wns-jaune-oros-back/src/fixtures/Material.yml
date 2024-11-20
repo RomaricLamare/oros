@@ -1,0 +1,10 @@
+entity: Material
+items:
+  material{1..10}:
+    name: "{{commerce.product}}"
+    category_id: 1
+    description: "{{commerce.productDescription}}"
+    image: "{{image.url}}"
+    initial_stock: 10
+    price: "{{commerce.price}}"
+    slug: "{{commerce.product}}"

@@ -1,0 +1,50 @@
+.footer {
+  background-color: #a8a8a8; /* Couleur de fond du footer */
+  padding: 20px 0; /* Espacement vertical autour du footer */
+  text-align: center; /* Centre le texte */
+  position: relative;
+  bottom: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around; /* Aligne les sections à l'intérieur du footer */
+  max-width: 1200px; /* Largeur maximale du footer */
+  margin: 0 auto; /* Centre le footer horizontalement */
+}
+
+.section {
+  flex: 1; /* Chaque section prend une part égale de l'espace */
+  margin: 0 10px; /* Espacement entre les sections */
+}
+
+/* Ajoute une classe à h4 */
+.section h4 {
+  margin-bottom: 10px; /* Espacement en bas des titres */
+}
+
+/* Qualifie le sélecteur ul avec .section pour le rendre pur */
+.section ul {
+  list-style: none; /* Enlève les puces des listes */
+  padding: 0; /* Enlève le padding par défaut */
+}
+
+.socialMedia {
+  display: flex; /* Affiche les icônes en ligne */
+  justify-content: center; /* Centre les icônes */
+  margin-top: 10px; /* Espacement au-dessus des icônes */
+}
+
+.socialMedia li {
+  margin: 0 5px; /* Réduit l'espacement entre les icônes */
+}
+
+.socialMedia a {
+  color: white; /* Couleur des icônes */
+  text-decoration: none; /* Enlève le soulignement des liens */
+}
+
+.bottom {
+  margin-top: 20px; /* Espacement au-dessus de la ligne du bas */
+  font-weight: bold; /* Texte en gras */
+}
