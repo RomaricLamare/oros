@@ -11,13 +11,9 @@ Welcome to our github repo! This project was made in collaboration during an alt
 
 As we attended this alternating program through the [Wild Code School](https://github.com/WildCodeSchool), this project was worked on remotely by all four of us.
 
-If you'd like to take a look at the back-end of our project, the repo can be found [here](https://github.com/WildCodeSchool/2311-wns-jaune-oros-back).
-
 ## Deploying to the school server
 
-This project has been deployed to the VPS that was provided by our school, which can be found at the following address:
-
-[Oros project](https://1123-jaune-1.wns.wilders.dev/)
+This project has been deployed to the VPS that was provided by our school, which was unfortunately temporarily available. 
 
 A process of CD (Continuous deployment) has been put into place. So with each new update to our main branch, if the tests that are set up are properly passed, then the new image is sent to our group's dockerhub.
 
